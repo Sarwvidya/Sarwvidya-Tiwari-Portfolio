@@ -1,0 +1,280 @@
+.contact-section {
+  background-color: var(--bg-primary);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: stretch;
+}
+
+/* 1. Info Column Styling */
+.contact-info {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.info-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.info-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  margin: 1rem 0;
+}
+
+.channel-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.channel-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary);
+}
+
+.channel-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.channel-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.channel-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+a.channel-value:hover {
+  color: var(--primary);
+  text-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+}
+
+/* Social links icons */
+.info-socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: var(--primary);
+  color: var(--text-main);
+  transform: translateY(-3px);
+  box-shadow: var(--neon-glow);
+}
+
+/* 2. Contact Form Styling */
+.contact-form-container {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.actual-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-group {
+  position: relative;
+  width: 100%;
+}
+
+.form-input {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-main);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-textarea {
+  resize: none;
+}
+
+/* Floating Label Animation */
+.form-label {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: left top;
+}
+
+.form-input:focus,
+.form-input:not(:placeholder-shown) {
+  border-color: var(--primary);
+  background: rgba(99, 102, 241, 0.02);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.1);
+}
+
+/* Floating behavior when typing or focused */
+.form-input:focus ~ .form-label,
+.form-input:not(:placeholder-shown) ~ .form-label {
+  transform: translateY(-1.7rem) scale(0.8);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Submission Error */
+.error-message {
+  color: #f87171;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.form-submit-btn {
+  width: 100%;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 1rem !important;
+  border-radius: 12px !important;
+  gap: 0.6rem;
+}
+
+/* Simulated submission loader spinner */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Success Overlay State */
+.form-success-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  animation: fadeInSuccess 0.5s ease-out;
+}
+
+@keyframes fadeInSuccess {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.success-icon-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--accent);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+}
+
+.success-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.success-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 320px;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive breakdowns */
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .contact-info,
+  .contact-form-container {
+    padding: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-info,
+  .contact-form-container {
+    padding: 1.8rem;
+  }
+  
+  .info-title {
+    font-size: 1.5rem;
+  }
+  
+  .channel-item {
+    gap: 0.8rem;
+  }
+  
+  .channel-icon {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .channel-value {
+    font-size: 0.9rem;
+  }
+}
